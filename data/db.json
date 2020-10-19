@@ -1,0 +1,21 @@
+{ 
+
+    "categories" : [
+        {
+       "id": 1,
+        "name": "Dairy",
+        "display_name": "Milk",
+        "description": "In isle 5"
+        }
+    ],
+
+    "products" : [
+        {
+            "id": 1,
+            "category":"Bulk Bins",
+            "name":"nuts",
+            "display_name":"Brazilian",
+            "description":"dry goods"
+        }
+    ]
+}
