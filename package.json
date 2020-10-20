@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "json.server db.json"
+    "test": "jest --verbose --coverage",
+    "watch": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/401-advanced-javascript-Riva/api-server-/issues"
   },
-  "homepage": "https://github.com/401-advanced-javascript-Riva/api-server-#readme"
+  "homepage": "https://github.com/401-advanced-javascript-Riva/api-server-#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^26.6.0",
+    "supertest": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
