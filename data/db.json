@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "category": "Beverages",
+      "name": "non-alcoholic",
+      "display_name": "Cider",
+      "description": "booze",
+      "id": 2
+    },
+    {
+      "category": "Asian",
+      "name": "International",
+      "display_name": "Sauces",
+      "description": "dry goods",
+      "id": 3
+    },
+    {
+      "category": "Beverages",
+      "name": "Alcholic",
+      "display_name": "IPA",
+      "description": "booze",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category": "Bulk Bins",
+      "name": "nuts",
+      "display_name": "Brazilian",
+      "description": "dry goods"
+    }
+  ]
+}

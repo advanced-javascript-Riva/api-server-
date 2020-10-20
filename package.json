@@ -1,0 +1,22 @@
+{
+  "name": "api-server-",
+  "version": "1.0.0",
+  "description": "api server",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "json.server db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-Riva/api-server-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-Riva/api-server-/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-Riva/api-server-#readme"
+}
