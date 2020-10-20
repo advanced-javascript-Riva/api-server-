@@ -19,7 +19,7 @@
 **The following software is required to be installed on your system:**
 
 - Install npm: `npm i -g` and then use  `npm init`
-- Install json-server: npm install json-server
+- Install json-server: `npm install json-server`
     - Create a `db.json` file with some data
     - Start JSON Server: `json-server --watch db.json`
     - Note that json-server does not validate your data, it’ll just save whatever you send it.
