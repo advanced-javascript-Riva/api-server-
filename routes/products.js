@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 });
 
 
-//get all categories
+//get all products
 router.get('/', async (req, res) => {
     console.log('router.get');
     try {
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-//get one category using id, this is a param so we can use params
+//get one product using id, this is a param so we can use params
 async function getOneProduct (req, res, next) {
     //setting product to undefined
     let product;
