@@ -14,7 +14,7 @@ router.post('/products', (req, res) => {
 
 //get all categories
 router.get('/products', (req, res) => {
-    res.send('Hello World');
+    res.send([1, 2, 3]);
 
 })
 
