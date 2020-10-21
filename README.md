@@ -74,4 +74,6 @@ mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopolo
 - install `jest`: `npm install jest`
 - install `supergoose`
 
+### How it works:
 
+[UML]('./UML')
