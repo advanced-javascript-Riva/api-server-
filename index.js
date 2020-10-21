@@ -13,10 +13,13 @@
 const server = require('./lib/server.js');
 server.start();
 const mongoose = require('mongoose');
+const CategoriesSchema = require('./model/categoriesSchema');
+const ProductsSchema = require('./model/productsSchema')
+
 
 
 //Connect to Database
-mongoose.connect('mongodb://localhost/playground')
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopology: true} )
             //better to use debug module rather than console.log
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...',err));

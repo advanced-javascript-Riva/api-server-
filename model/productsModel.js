@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 //Create a schema structure
-const CategoriesSchema = new mongoose.Schema({
+const ProductsSchema = new mongoose.Schema({
     // When this is stored, each obj in array will be key value pair
         // The key will be the index and the value will be the string
         category: String,
@@ -14,4 +14,4 @@ const CategoriesSchema = new mongoose.Schema({
     });
 
 
-module.exports = CategoriesSchema;
+module.exports = ProductsSchema;
