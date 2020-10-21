@@ -8,6 +8,8 @@ TODO:
 // Instead of get/:id, would be get/:collection/:id
 //if( collection === 'category')
 
+//Create controller function that defines a function that I can input into each of these.
+
 
 // uses the object in the body of the request to create a new “record”
 router.post('/', async (req, res) => {
