@@ -32,6 +32,8 @@
 - install `express`
 - import express : `const express = require('express');
 - Execute express: `const app = express(); `
+
+- **The entry point for this app is: `index.js`**
 - Start server:
 ```
     /* give it a port number and optionally pass a function to call when app
