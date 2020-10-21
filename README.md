@@ -76,4 +76,5 @@ mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopolo
 
 ### How it works:
 
-[UML]('./UML')
+![UML0](UML.png)
+
