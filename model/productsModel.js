@@ -1,17 +1,9 @@
+'use strict'
+
 const mongoose = require('mongoose');
+const ProductsSchema = require('./productsSchema');
 
 
-//Create a schema structure
-const ProductsSchema = new mongoose.Schema({
-    // When this is stored, each obj in array will be key value pair
-        // The key will be the index and the value will be the string
-        category: String,
-        name: String,
-        display_name: String,
-        //date.now will be default value
-        description: String
+const Products = mongoose.model('Products', ProductsSchema);
 
-    });
-
-
-module.exports = ProductsSchema;
+module.exports = Products;
