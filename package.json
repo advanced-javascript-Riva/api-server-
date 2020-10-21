@@ -22,8 +22,11 @@
   },
   "homepage": "https://github.com/401-advanced-javascript-Riva/api-server-#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jest": "^26.6.0",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.9",
     "supertest": "^5.0.0"
   },
   "devDependencies": {
