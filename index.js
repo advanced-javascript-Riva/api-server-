@@ -14,7 +14,7 @@ const server = require('./lib/server.js');
 server.start();
 const mongoose = require('mongoose');
 const CategoriesSchema = require('./model/categoriesSchema');
-const ProductsSchema = require('./model/productsSchema')
+const ProductsSchema = require('./model/productsSchema');
 
 
 
