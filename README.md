@@ -42,6 +42,19 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 ```
 
+- Install MongoDB: `npm install mongodb`
+- Install mongoose: `npm install -save--dev mongoose`
+- Visit [docs.mongodb.com](https://docs.mongodb.com/manual/tutorial/getting-started/) to learn How to get started using MongoDB.
+- Connect to your db:
+
+```
+
+//Connect to Database
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopology: true} )
+    .then(() => console.log('Connected to MongoDB...'))
+    .catch(err => console.error('Could not connect to MongoDB...',err));
+
+```
 
 
 
@@ -55,7 +68,8 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 **Phase 2:**
 
-- install `supertest`
-- install `jest`
+- install `supertest`: `npm install supertest`
+- install `jest`: `npm install jest`
+- install `supergoose`
 
 
