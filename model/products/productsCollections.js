@@ -9,22 +9,24 @@ class ProductsCollection {
 
 //using async/await class methods here!
     async create(object) {
+        console.log('What is this object', object);
         // console.log(`Added note: ${args.payload}`);
         let newProduct = new this.model({
-            category: object.category,
             name: object.name,
             display_name: object.display_name,
             description: object.description
 
         });
+        console.log('creating product', newProduct);
        return await newProduct.save();
+
 
     }
 
 
     //read() performs a find()
-    async read() {
-        const allProducts = await this.model.find();
+    async read(id) {
+        const allProducts = await this.model.find(id);
         return allProducts;
     }
 

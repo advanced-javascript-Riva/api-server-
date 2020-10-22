@@ -13,5 +13,5 @@ const CategoriesSchema = new mongoose.Schema({
 
     });
 
+ module.exports = CategoriesSchema;
 
-module.exports = CategoriesSchema;
