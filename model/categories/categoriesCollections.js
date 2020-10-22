@@ -12,7 +12,7 @@ class Collections {
    async create(object) {
       // console.log(`Added note: ${args.payload}`);
       let newCategory = new this.model({
-
+         category: object.category,
          name: object.name,
          display_name: object.display_name,
          description: object.description
@@ -49,23 +49,7 @@ class Collections {
      return record;
    }
 
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
 
 
 module.exports = Collections;
