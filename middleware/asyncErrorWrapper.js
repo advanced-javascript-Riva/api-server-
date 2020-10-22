@@ -9,8 +9,8 @@ to first error handler middleware in controller
 - function currying
 - any async function will be caught (in express);
 */
-// module.exports = function AsyncErrorWrapper(fn) {
-//     return (req, res, next) => {
-//         return fn(req, res).catch(next);
-//     }
-// }
+module.exports = (fn) => {
+    return (req, res, next) => {
+        return Promise.resolve(fn(req, res, next)).catch(next);
+    };
+};

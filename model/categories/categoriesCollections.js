@@ -8,7 +8,7 @@ class Collections {
     this.model = CategoriesModel;
  }
 
-
+//using async/await class methods here!
    async create(object) {
       // console.log(`Added note: ${args.payload}`);
       let newCategory = new this.model({
@@ -18,7 +18,7 @@ class Collections {
          description: object.description
 
       });
-      await newCategory.save()
+      return await (newCategory.save())
 
    }
 
@@ -44,11 +44,9 @@ class Collections {
       if (record === null) {
          return null;
       }
-     return record;
    }
 
 }
-
 
 module.exports = Collections;
 
