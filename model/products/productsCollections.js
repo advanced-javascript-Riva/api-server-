@@ -7,6 +7,7 @@ class ProductsCollection {
         this.model = ProductsModel;
     }
 
+//using async/await class methods here!
     async create(object) {
         // console.log(`Added note: ${args.payload}`);
         let newProduct = new this.model({
@@ -16,7 +17,7 @@ class ProductsCollection {
             description: object.description
 
         });
-        await newProduct.save()
+       return await newProduct.save();
 
     }
 
@@ -36,7 +37,7 @@ class ProductsCollection {
         // record.overwrite(data);
         // //after we update the doc we want to save it
         await productRecord.save();
-        return productRecord;
+         return productRecord;
     }
 
     async delete(id) {
@@ -44,7 +45,7 @@ class ProductsCollection {
         if (productRecord === null) {
             return null;
         }
-        return productRecord;
+       productRecord;
     }
 
 }
