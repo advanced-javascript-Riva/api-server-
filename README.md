@@ -17,6 +17,11 @@
 
 - Previously,  json-server did a great job of serving as a “mock” API server for our application. In this phase ,we begin the transition towards making a “real” API server. Specifically, replicating the same functionality json-server provided is done by writing our own server, using Express and Node.js
 
+**Phase 3 Requirements**
+
+In this phase, we continue the transition towards making a “real” API server.
+- Migrate from in-memory data storage to using Mongo to store our data permanently, and modularizing our routes for flexibility.
+
 ## Setup
 
 ### How to initialize/run the application:
@@ -76,5 +81,5 @@ mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopolo
 
 ### How it works:
 
-![UML0](UML.png)
+![UML](UML.png)
 
