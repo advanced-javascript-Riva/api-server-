@@ -22,13 +22,11 @@ class Collections {
 
    }
 
-
    //read() performs a find()
    async read() {
       const allCategories = await this.model.find();
       return allCategories;
    }
-
 
    async update(id) {
       const record =  await this.model.findByIdAndUpdate(id, req.body);

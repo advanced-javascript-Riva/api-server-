@@ -2,7 +2,7 @@
 
 const ProductsModel = require('./productsModel');
 
-class Products {
+class ProductsCollection {
     constructor() {
         this.model = ProductsModel;
     }
@@ -49,4 +49,4 @@ class Products {
 
 }
 
-module.exports = Products;
+module.exports = ProductsCollection;
