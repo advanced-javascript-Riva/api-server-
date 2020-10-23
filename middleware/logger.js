@@ -1,8 +1,6 @@
 'use strict';
 
 
-
-
 //middleware function
 function logger(req, res, next){
     console.log('Logging');

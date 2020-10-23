@@ -12,19 +12,18 @@ class Collections {
    async create(object) {
       // console.log(`Added note: ${args.payload}`);
       let newCategory = new this.model({
-         category: object.category,
          name: object.name,
          display_name: object.display_name,
          description: object.description
 
       });
-      return await (newCategory.save())
+      return await newCategory.save()
 
    }
 
    //read() performs a find()
-   async read() {
-      const allCategories = await this.model.find();
+   async read(id) {
+      const allCategories = await this.model.find({_id: id});
       return allCategories;
    }
 
