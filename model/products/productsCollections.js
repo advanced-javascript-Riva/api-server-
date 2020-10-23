@@ -13,6 +13,7 @@ class ProductsCollection {
         // console.log(`Added note: ${args.payload}`);
         let newProduct = new this.model({
             name: object.name,
+            category: object.category,
             display_name: object.display_name,
             description: object.description
 
