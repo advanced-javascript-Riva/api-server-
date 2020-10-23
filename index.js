@@ -8,6 +8,7 @@ const ProductsSchema = require('./model/products/productsSchema');
 
 const server = require('./lib/server.js');
 server.start();
+console.log('what is this',server);
 
 //Connect to Database
 mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopology: true})
