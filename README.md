@@ -13,7 +13,7 @@
 
 *For the first phase, this API will perform CRUD operations using ReST methods on 2 data models using json-server, an installable and configurable API application used to “spin up” servers for testing purposes.*
 
-** Phase 2 Requirements:**
+**Phase 2 Requirements:**
 
 - Previously,  json-server did a great job of serving as a “mock” API server for our application. In this phase , I begin the transition towards making a “real” API server. Specifically, replicating the same functionality json-server provided is done by writing my own server, using Express and Node.js
 
@@ -88,6 +88,14 @@ mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopolo
 - install `supertest`: `npm install supertest`
 - install `jest`: `npm install jest`
 - install `supergoose`
+
+**Phase 3:**
+
+- Unit tests for your middleware
+- Route tests for our server
+- Every route should respond with the right status code and the expected data
+- CRUD tests for your collection classes
+- Used the `supergoose` testing library to ensure that data is persisted into a live database and that the server need not be started.
 
 ### How it works:
 
