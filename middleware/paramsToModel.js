@@ -1,7 +1,20 @@
 'use strict';
 
+const categoriesModel = require('../model/categories/categoriesModel');
+const productsModel = require('../model/products/productsModel');
+
+
 module.exports = function (req, res, next){
-console.log('middleware found model' + req.params.model);
-res.model = req.params.model;
-next();
+    switch (req.params.model) {
+        case 'categories':
+            res.model = categoriesModel;
+            break;
+        case 'products':
+            res.model = productsModel;
+            break;
+        default:
+            res.status(404).send('Unknown mdoel type');
+            return;
+    }
+    next();
 }
