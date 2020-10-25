@@ -1,5 +1,10 @@
 'use strict';
 
-module.exports = function(err,req, res, next) {
-    res.status(500).send('Internal server error');
+module.exports = (error, req, res, next) => {
+    res.status(error.status || 500);
+    res.json({
+        error: {
+            message: error.message
+        }
+    });
 };

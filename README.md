@@ -46,7 +46,7 @@ In this final phase, I'll be making the API easier to manage, and much more exte
 - Use httpie (command line), Insomnia, Postman, or any other “ReST” testing application to POST some categories and products, using JSON, into your API so you have data to work with.
 - install `express`
 - import express : `const express = require('express');
-- Execute express: `const app = express(); `
+- Execute express: `const app = express();`
 
 - **The entry point for this app is: `index.js`**
 - Start server:
