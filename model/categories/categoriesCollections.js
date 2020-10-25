@@ -1,16 +1,16 @@
 'use strict'
 
+const CategoriesSchema = require('./categoriesSchema');
+const Collections = require('../mongo');
 
-const CategoriesModel = require('./categoriesModel')
-
-class Collections {
+class CategoryCollection extends Collections {
  constructor() {
-    this.model = CategoriesModel;
+    //super calls constructor of parent class;
+    super('Categories',CategoriesSchema);
  }
 
 //using async/await class methods here!
    async create(object) {
-      // console.log(`Added note: ${args.payload}`);
       let newCategory = new this.model({
          name: object.name,
          display_name: object.display_name,
@@ -20,34 +20,9 @@ class Collections {
       return await newCategory.save()
 
    }
-
-   //read() performs a find()
-   async read(id) {
-      const allCategories = await this.model.find({_id: id});
-      return allCategories;
-   }
-
-   async update(id) {
-      const record =  await this.model.findByIdAndUpdate(id, req.body);
-      if (record === null) {
-         return null;
-      }
-      // record.overwrite(data);
-      // //after we update the doc we want to save it
-      await record.save();
-      return record;
-   }
-
-   async delete(id) {
-      const record =  await this.model.findByIdAndDelete(id);
-      if (record === null) {
-         return null;
-      }
-   }
-
 }
 
-module.exports = Collections;
+module.exports = CategoryCollection;
 
 
 

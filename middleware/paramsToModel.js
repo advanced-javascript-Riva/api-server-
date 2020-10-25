@@ -7,13 +7,13 @@ const productsModel = require('../model/products/productsModel');
 module.exports = function (req, res, next){
     switch (req.params.model) {
         case 'categories':
-            res.model = categoriesModel;
+            req.model = categoriesModel;
             break;
         case 'products':
-            res.model = productsModel;
+            req.model = productsModel;
             break;
         default:
-            res.status(404).send('Unknown mdoel type');
+            req.status(404).send('Unknown model type');
             return;
     }
     next();
