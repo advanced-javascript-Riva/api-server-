@@ -1,16 +1,17 @@
 'use strict';
 
-const categoriesModel = require('../model/categories/categoriesModel');
-const productsModel = require('../model/products/productsModel');
+const CategoryCollection = require('../model/categories/categoriesCollections');
+const ProductsCollection = require('../model/products/productsCollections');
+
 
 
 module.exports = function (req, res, next){
     switch (req.params.model) {
         case 'categories':
-            req.model = categoriesModel;
+            req.model = new CategoryCollection();
             break;
         case 'products':
-            req.model = productsModel;
+            req.model = new ProductsCollection();
             break;
         default:
             req.status(404).send('Unknown model type');

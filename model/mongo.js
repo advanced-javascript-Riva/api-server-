@@ -18,9 +18,9 @@ class Collections {
       return allEntries;
    }
 
-   async update(id) {
+   async update(id, body) {
        console.log('Mongo update method', id);
-      const entry =  await this.model.findByIdAndUpdate(id, req.body);
+      const entry =  await this.model.findByIdAndUpdate(id, body);
       if (entry === null) {
          return null;
       }
