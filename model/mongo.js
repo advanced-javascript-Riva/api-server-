@@ -1,5 +1,5 @@
 'use strict'
-
+const mongoose = require('mongoose');
 
 class Collections {
      /**constructor accepts a schema and model name as args when creating an instance,
@@ -13,13 +13,11 @@ class Collections {
 //create() method is different for each model as schema is slightly different
    //read() performs a find()
    async read(id) {
-       console.log('Mongo read method', id);
       const allEntries= await this.model.find({_id: id});
       return allEntries;
    }
 
    async update(id, body) {
-       console.log('Mongo update method', id);
       const entry =  await this.model.findByIdAndUpdate(id, body);
       if (entry === null) {
          return null;
@@ -31,7 +29,6 @@ class Collections {
    }
 
    async delete(id) {
-       console.log('Mongo delete method', id);
       const entry =  await this.model.findByIdAndDelete(id);
       if ( entry === null) {
          return null;
