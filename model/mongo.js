@@ -13,9 +13,14 @@ class Collections {
 //create() method is different for each model as schema is slightly different
    //read() performs a find()
    async read(id) {
-      const allEntries= await this.model.find({_id: id});
-      return allEntries;
+      const oneEntries= await this.model.find({_id: id});
+      return oneEntries[0];
    }
+
+   async readAll() {
+    const allEntries = await this.model.find({});
+    return allEntries;
+}
 
    async update(id, body) {
       const entry =  await this.model.findByIdAndUpdate(id, body);
