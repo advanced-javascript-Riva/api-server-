@@ -91,13 +91,12 @@ mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopolo
 
 **Phase 3:**
 
-- Unit tests for your middleware
-- Route tests for our server
+- Unit tests for  middleware
+- Route tests for  server
 - Every route should respond with the right status code and the expected data
-- CRUD tests for your collection classes
+- CRUD tests for  collection classes
 - Used the `supergoose` testing library to ensure that data is persisted into a live database and that the server need not be started.
 
-### How it works:
 
 ![UML](UML.png)
 
