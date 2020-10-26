@@ -23,16 +23,17 @@ class Collections {
 }
 
    async update(id, body) {
-      const entry =  await this.model.findByIdAndUpdate(id, body);
+      const entry =  await this.model.findByIdAndUpdate(id, body, {
+          //telling Mongo to return updated version of the data
+          new: true
+      });
       if (entry === null) {
          return null;
       }
 
       // //after we update the doc we want to save it
-      await entry.save((err, newEntry) => {
-        console.log('saved new entry', newEntry)
-          return newEntry;
-      });
+      await entry.save();
+      return entry
    }
 
    async delete(id) {
