@@ -1,9 +1,6 @@
 'use strict';
 
-// const MongoClient = require('mongodb').MongoClient;
-
 const mongoose = require('mongoose');
-
 
 const server = require('./lib/server.js');
 server.start();

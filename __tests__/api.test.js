@@ -40,7 +40,6 @@ let category = {
 
 describe('/GET', () => {
     beforeAll(async () => {
-        // supergoose.startDB();
         productsCollection = new ProductsCollection();
         categoryCollection = new CategoriesCollection();
         await createProduct();

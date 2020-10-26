@@ -10,7 +10,7 @@ class Collections {
  constructor(modelName,schema) {
     this.model = mongoose.model(modelName, schema);
  }
-//create() method is different for each model as schema is slightly different
+   //create() method is different for each model as schema is slightly different
    //read() performs a find()
    async read(id) {
       const oneEntries= await this.model.find({_id: id});
@@ -30,8 +30,7 @@ class Collections {
       if (entry === null) {
          return null;
       }
-
-      // //after we update the doc we want to save it
+      // after we update the doc we want to save it
       await entry.save();
       return entry
    }
