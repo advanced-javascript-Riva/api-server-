@@ -29,8 +29,10 @@ class Collections {
       }
 
       // //after we update the doc we want to save it
-      await entry.save();
-      return entry;
+      await entry.save((err, newEntry) => {
+        console.log('saved new entry', newEntry)
+          return newEntry;
+      });
    }
 
    async delete(id) {

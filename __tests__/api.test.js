@@ -39,17 +39,17 @@ let category = {
 }
 
 describe('/GET', () => {
-    beforeAll(async() => {
-    // supergoose.startDB();
-    productsCollection = new ProductsCollection();
-    categoryCollection = new CategoriesCollection();
-     await createProduct();
-     await createCategory();
+    beforeAll(async () => {
+        // supergoose.startDB();
+        productsCollection = new ProductsCollection();
+        categoryCollection = new CategoriesCollection();
+        await createProduct();
+        await createCategory();
     })
     beforeEach(() => {
 
     })
-    it('should return all products', async() => {
+    it('should return all products', async () => {
         await testServer.get('/products')
             .then(res => {
                 expect(res.body.length).toEqual(1);
@@ -65,14 +65,14 @@ describe('/GET', () => {
                 expect(res.status).toBe(200);
             })
     })
-    it('should get one category',async () => {
+    it('should get one category', async () => {
         await testServer.get('/categories/' + category.id)
             .then(res => {
                 expect(res.body.name).toBe(category.name);
                 expect(res.status).toEqual(200);
             })
     });
-    it('should get one product', async() => {
+    it('should get one product', async () => {
         console.log('requesting product with id', product.id);
         await testServer.get('/products/' + product.id)
             .then(res => {
@@ -83,33 +83,66 @@ describe('/GET', () => {
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-xdescribe('/DELETE', () => {
-    beforeEach(() => {
-        createProduct();
+describe('/PUT', () => {
+    beforeAll(async () => {
+        // supergoose.startDB();
+        productsCollection = new ProductsCollection();
+        categoryCollection = new CategoriesCollection();
+        await createProduct();
+        await createCategory();
     })
-    it('should delete a product', async() => {
-        await testServer.get('/products/3')
+    beforeEach(() => {
+
+    })
+
+    it('should update a product', async () => {
+        await testServer.put('/products/' + product.id).send({
+                category: 'Canned Goods'
+            })
             .then(res => {
-                expect(res.body).toBe(1);
+                //express returns a null response as an empty object
+                expect(res.body.category).toBe('Canned Goods');
                 expect(res.status).toBe(200);
             })
     });
-    it('should delete a category', async() => {
-        await testServer.get('/categories/2')
+    it('should update category', async () => {
+        await testServer.put('/categories/' + category.id).send({
+                name: 'Boo Berry'
+            })
             .then(res => {
-                expect(res.body).toBe(1);
+                expect(res.body.name).toBe('Boo Berry');
                 expect(res.status).toBe(200);
             })
 
+    });
+
+    describe('/DELETE', () => {
+        beforeAll(async () => {
+            // supergoose.startDB();
+            productsCollection = new ProductsCollection();
+            categoryCollection = new CategoriesCollection();
+            await createProduct();
+            await createCategory();
+        })
+        beforeEach(() => {
+
+        })
+
+        it('should delete a product', async () => {
+            await testServer.delete('/products/' + product.id)
+                .then(res => {
+                    //express returns a null response as an empty object
+                    expect(res.body).toEqual('');
+                    expect(res.status).toBe(202);
+                })
+        });
+        it('should delete a category', async () => {
+            await testServer.delete('/categories/' + category.id)
+                .then(res => {
+                    expect(res.body).toEqual('');
+                    expect(res.status).toBe(202);
+                })
+
+        });
     });
 });
