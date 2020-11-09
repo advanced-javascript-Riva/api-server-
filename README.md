@@ -73,7 +73,13 @@ mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopolo
 
 ```
 
+### ,env requirements:
 
+```
+PORT=4000
+MONGODB_URI=
+
+```
 
 ### Testing:
 
