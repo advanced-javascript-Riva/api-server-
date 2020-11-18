@@ -14,7 +14,7 @@ module.exports = function (req, res, next){
             req.model = new ProductsCollection();
             break;
         default:
-            req.status(404).send('Unknown model type');
+            res.status(404).send('Unknown model type');
             return;
     }
     next();
