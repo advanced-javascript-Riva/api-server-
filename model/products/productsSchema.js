@@ -10,8 +10,6 @@ const ProductsSchema = new mongoose.Schema({
         display_name: String,
         //date.now will be default value
         description: String
-
     });
-
 
 module.exports = ProductsSchema;
