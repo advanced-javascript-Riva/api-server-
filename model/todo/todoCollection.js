@@ -14,8 +14,8 @@ class TodoCollection extends Collections {
             description: object.description,
             completed: object.completed,
             difficulty: object.difficulty
-
         });
+        
        return await newTodo.save();
     }
 }
