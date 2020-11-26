@@ -10,9 +10,11 @@ class TodoCollection extends Collections {
 //using async/await class methods here!
     async create(object) {
         let newTodo = new this.model({
-            item: object.item,
             assignee: object.assignee,
-            description: object.description
+            description: object.description,
+            completed: object.completed,
+            difficulty: object.difficulty
+
         });
        return await newTodo.save();
     }

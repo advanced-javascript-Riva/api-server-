@@ -14,6 +14,7 @@ module.exports = function (req, res, next){
             break;
         case 'todos':
             req.model = new TodoCollection();
+            break;
         default:
             res.status(404).send('Unknown model type');
             return;
