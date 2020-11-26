@@ -4,21 +4,17 @@ const TodoSchema =  require('../todo/todoSchema');
 
 class TodoCollection extends Collections {
     constructor() {
-        super('todo',TodoSchema);
+        super('Todos',TodoSchema);
     }
 
 //using async/await class methods here!
     async create(object) {
         let newTodo = new this.model({
-            name: object.name,
-            category: object.category,
-            display_name: object.display_name,
+            item: object.item,
+            assignee: object.assignee,
             description: object.description
-
         });
        return await newTodo.save();
-
-
     }
 }
 
