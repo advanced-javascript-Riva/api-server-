@@ -1,11 +1,8 @@
 'use strict';
 
-
-//middleware function
-function logger(req, res, next){
+const logger = (req, res, next) => {
     console.log('Logging');
     next()
 };
-
 
 module.exports = logger;

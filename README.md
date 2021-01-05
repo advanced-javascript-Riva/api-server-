@@ -50,13 +50,12 @@ In this final phase, I'll be making the API easier to manage, and much more exte
 
 - **The entry point for this app is: `index.js`**
 - Start server:
-```
-    /* give it a port number and optionally pass a function to call when app
-     starts listening on given port*/
+
+```javascript
+/* give it a port number and optionally pass a function to call when app starts listening on given port*/
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
 ```
 
 - Install MongoDB: `npm install mongodb`
@@ -64,21 +63,17 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 - Visit [docs.mongodb.com](https://docs.mongodb.com/manual/tutorial/getting-started/) to learn How to get started using MongoDB.
 - Connect to your db:
 
-```
-
-//Connect to Database
+```javascript
 mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopology: true} )
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...',err));
-
 ```
 
 ### .env requirements:
 
-```
+```javascript
 PORT=4000
 MONGODB_URI=
-
 ```
 
 ### Testing:

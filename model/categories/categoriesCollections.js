@@ -5,11 +5,8 @@ const Collections = require('../mongo');
 
 class CategoryCollection extends Collections {
  constructor() {
-    //super calls constructor of parent class;
     super('Categories',CategoriesSchema);
  }
-
-//using async/await class methods here!
    async create(object) {
       let newCategory = new this.model({
          name: object.name,
@@ -18,9 +15,8 @@ class CategoryCollection extends Collections {
 
       });
       return await newCategory.save()
-
-   }
-}
+   };
+};
 
 module.exports = CategoryCollection;
 

@@ -6,8 +6,6 @@ class TodoCollection extends Collections {
     constructor() {
         super('Todos',TodoSchema);
     }
-
-//using async/await class methods here!
     async create(object) {
         let newTodo = new this.model({
             assignee: object.assignee,
@@ -15,9 +13,8 @@ class TodoCollection extends Collections {
             completed: object.completed,
             difficulty: object.difficulty
         });
-        
        return await newTodo.save();
-    }
-}
+    };
+};
 
 module.exports = TodoCollection;

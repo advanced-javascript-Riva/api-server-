@@ -7,8 +7,6 @@ class ProductsCollection extends Collections {
     constructor() {
         super('Products',ProductsSchema);
     }
-
-//using async/await class methods here!
     async create(object) {
         let newProduct = new this.model({
             name: object.name,
@@ -18,9 +16,7 @@ class ProductsCollection extends Collections {
 
         });
        return await newProduct.save();
-
-
-    }
-}
+    };
+};
 
 module.exports = ProductsCollection;

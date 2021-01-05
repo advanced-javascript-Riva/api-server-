@@ -4,14 +4,6 @@ const supergoose = require('@code-fellows/supergoose');
 const server = require('../lib/server');
 const testServer = supergoose(server.app);
 
-/*
-
-- Route tests for our server
-- Use the supergoose testing library
-*/
-
-
-
 describe('Testing the app', () => {
     it('should return some products',() =>  {
         return testServer.get('/products')
