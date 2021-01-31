@@ -1,6 +1,7 @@
 'use strict';
 
 const CategoryCollection = require('../model/categories/categoriesCollections');
+const MovieCollection = require('../model/movies/movieCollection');
 const ProductsCollection = require('../model/products/productsCollections');
 const TodoCollection = require('../model/todo/todoCollection');
 
@@ -14,6 +15,9 @@ module.exports = function (req, res, next){
             break;
         case 'todos':
             req.model = new TodoCollection();
+            break;
+        case 'movies':
+            req.model = new MovieCollection();
             break;
         default:
             res.status(404).send('Unknown model type');

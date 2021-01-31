@@ -23,13 +23,14 @@
   "homepage": "https://github.com/401-advanced-javascript-Riva/api-server-#readme",
   "dependencies": {
     "@code-fellows/supergoose": "^1.0.11",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "httpie": "^1.1.2",
     "jest": "^26.6.0",
-    "mongodb": "^3.6.2",
-    "mongoose": "^5.10.9",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.14",
     "supertest": "^5.0.0"
   },
   "devDependencies": {

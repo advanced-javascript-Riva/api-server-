@@ -9,6 +9,7 @@ class MovieCollection extends Collections {
     async create(object) {
         let newMovie= new this.model({
             id: object.id,
+            poster: object.poster,
             title: object.title,
             vote_average: object.vote_average,
             overview: object.overview,
