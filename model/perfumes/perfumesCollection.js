@@ -1,17 +1,18 @@
 
 const Collections = require('../mongo');
-const PerfumesSchema =  require('../perfumes/PerfumesSchema');
+const PerfumeSchema =  require('./perfumesSchema');
 
-class PerfumesCollection extends Collections {
+class PerfumeCollection extends Collections {
     constructor() {
-        super('Perfumes',PerfumesSchema);
+        super('Perfumes', PerfumeSchema);
     }
     async create(object) {
         let newPerfume = new this.model({
             id: object.id,
-            perfume_title: object.perfume_title,
+            title: object.title,
             price: object.price,
             size: object.size,
+            category:object.category,
             type: object.type,
             description:object.description
         });
@@ -19,4 +20,4 @@ class PerfumesCollection extends Collections {
     };
 };
 
-module.exports = PerfumesCollection;
+module.exports = PerfumeCollection;
