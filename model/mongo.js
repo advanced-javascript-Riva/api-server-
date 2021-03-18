@@ -16,8 +16,8 @@ class Collections {
       return oneEntries[0];
    };
 
-   async readAll() {
-    const allEntries = await this.model.find({});
+   async readAll(filter) {
+    const allEntries = await this.model.find(filter);
     return allEntries;
    };
 

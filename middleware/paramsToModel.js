@@ -20,7 +20,7 @@ module.exports = function (req, res, next){
         case 'movies':
             req.model = new MovieCollection();
             break;
-        case 'perfumes':
+        case 'perfumes': 
             req.model = new PerfumeCollection();
             break;
         default:
