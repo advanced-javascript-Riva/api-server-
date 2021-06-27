@@ -7,6 +7,7 @@ class MovieCollection extends Collections {
     super('Movies',MovieSchema);
   }
   async create(object) {
+    console.log('creating movie', object);
     let newMovie= new this.model({
       id: object.id,
       poster: object.poster,
@@ -15,6 +16,7 @@ class MovieCollection extends Collections {
       overview: object.overview,
       release_date:object.release_date
     });
+    console.log('saving movie')
     return await newMovie.save();
   };
 };

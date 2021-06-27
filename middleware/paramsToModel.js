@@ -8,6 +8,7 @@ const TodoCollection = require('../model/todo/todoCollection');
 const UserCollection = require('../model/user/userCollection');
 
 module.exports = function (req, res, next){
+    console.log('checking params to model', req.params.model);
     switch (req.params.model) {
     case 'categories':
         req.model = new CategoryCollection();
@@ -30,5 +31,6 @@ module.exports = function (req, res, next){
       res.status(404).send('Unknown model type');
     return;
    }
+   console.log('success grabbing model', req.model);
    next();
 }
