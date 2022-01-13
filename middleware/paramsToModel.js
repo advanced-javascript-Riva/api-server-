@@ -25,8 +25,9 @@ module.exports = function (req, res, next){
     case 'perfumes': 
         req.model = new PerfumeCollection();
         break;
-    case 'users':
+    case 'user':
         req.model = new UserCollection();
+        break;
     default:
       res.status(404).send('Unknown model type');
     return;
