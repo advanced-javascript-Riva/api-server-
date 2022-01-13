@@ -7,8 +7,21 @@ class UserCollection extends Collections {
   }
   async create(object) {
     let newUser = new this.model({
-      name: object.name,
-      id: object.id
+      username : {
+        type:object.type,
+        minLength:object.minLength,
+        maxLength:object.maxLength,
+        required: object.required
+      },
+      email: {
+        type: object.type,
+        required:object.required
+      },
+      password: {
+        type:object.type,
+        minLength:object.minLength,
+        required:object.required
+      }
     });
     return await newUser.save();
   };
