@@ -6,8 +6,9 @@ const PerfumeCollection = require('../model/perfumes/perfumesCollection');
 const ProductsCollection = require('../model/products/productsCollections');
 const TodoCollection = require('../model/todo/todoCollection');
 const UserCollection = require('../model/user/userCollection');
+const validateUser = require('../middleware/validateUser');
 
-module.exports = function (req, res, next){
+module.exports = async function (req, res, next){
     console.log('checking params to model', req.params.model);
     switch (req.params.model) {
     case 'categories':
@@ -26,6 +27,7 @@ module.exports = function (req, res, next){
         req.model = new PerfumeCollection();
         break;
     case 'user':
+        await validate(validateUser, req, res, next);
         req.model = new UserCollection();
         break;
     default:
@@ -34,4 +36,10 @@ module.exports = function (req, res, next){
    }
    console.log('success grabbing model', req.model);
    next();
+}
+
+const validate = async (validators, req, res, next) => {
+  for (let middleware of validators) {
+    await middleware(req, res, next);
+  }
 }
