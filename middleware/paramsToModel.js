@@ -27,7 +27,7 @@ module.exports = async function (req, res, next){
         req.model = new PerfumeCollection();
         break;
     case 'user':
-        await validate(validateUser, req, res, next);
+        req.validators = validateUser;
         req.model = new UserCollection();
         break;
     default:
@@ -38,8 +38,3 @@ module.exports = async function (req, res, next){
    next();
 }
 
-const validate = async (validators, req, res, next) => {
-  for (let middleware of validators) {
-    await middleware(req, res, next);
-  }
-}
