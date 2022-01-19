@@ -9,8 +9,9 @@ const validate = async (req, res, next) => {
   }
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log('errors found sending json')
     res.status(400).json({ errors: errors.array()})
+  } else if (errors.isEmpty()) {
+    res.status(200).json({success:true, message: "sign up is successful"})
   } else {
     next();
   }
